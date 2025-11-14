@@ -7,7 +7,7 @@ export interface DrainagePoint {
 	healthIndex: number;
 	waterLevel: number;
 	flowRate: number;
-	status: string;
+	status: "good" | "fair" | "poor" | "critical";
 	lastUpdated: string;
 	distance: number;
 }

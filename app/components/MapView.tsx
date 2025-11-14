@@ -100,27 +100,27 @@ export default function MapView({ points, onPointClick }: MapViewProps) {
 				</svg>
 			</div>
 
-		{/* Drainage points */}
-		{points.map((point, index) => (
-			<button
-				key={point.id}
-				onClick={() => onPointClick(point)}
-				className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
-				style={positions[index]}>
-				<div
-					className={`w-5 h-5 ${colors[point.status]
-						} rounded-full border-4 border-slate-900 shadow-lg animate-pulse`}
-				/>
-				<div
-					className={`absolute w-12 h-12 ${colors[point.status]
-						} rounded-full opacity-20 -top-3.5 -left-3.5 group-hover:opacity-40 transition-opacity`}
-				/>
-				{/* Status label */}
-				<div className="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 bg-slate-900/80 px-2 py-1 rounded text-xs text-white whitespace-nowrap">
-					{point.status.charAt(0).toUpperCase() + point.status.slice(1)}
-				</div>
-			</button>
-		))}			{/* Location labels - Epe Lagos Area */}
+			{/* Drainage points */}
+			{points.map((point, index) => (
+				<button
+					key={point.id}
+					onClick={() => onPointClick(point)}
+					className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
+					style={positions[index]}>
+					<div
+						className={`w-5 h-5 ${colors[point.status]
+							} rounded-full border-4 border-slate-900 shadow-lg animate-pulse`}
+					/>
+					<div
+						className={`absolute w-12 h-12 ${colors[point.status]
+							} rounded-full opacity-20 -top-3.5 -left-3.5 group-hover:opacity-40 transition-opacity`}
+					/>
+					{/* Status label */}
+					<div className="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 bg-slate-900/80 px-2 py-1 rounded text-xs text-white whitespace-nowrap">
+						{point.status.charAt(0).toUpperCase() + point.status.slice(1)}
+					</div>
+				</button>
+			))}			{/* Location labels - Epe Lagos Area */}
 			<div className="absolute top-[23%] left-[30%] text-xs text-slate-400 whitespace-nowrap pointer-events-none">
 				Epe Town
 			</div>
